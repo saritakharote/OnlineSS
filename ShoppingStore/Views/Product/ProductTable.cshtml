@@ -1,0 +1,37 @@
+﻿@Model  List<ShoppingStore.Entities.Product>
+@{
+    ViewBag.Title = "ProductTable";
+}
+
+<div>
+    <form method="post" action="/Product/ProductTable">
+        <input name="Search" />
+        <button>Search</button>
+    </form>
+    <button>New</button>
+</div>
+
+<table>
+    <thead>
+        <td>Product Name</td>
+        <td>Category</td>
+        <td>Price</td>
+        <td>Actions</td>
+    </thead>
+    
+    <tbody>
+            @foreach(var product in Model)  
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td></td>
+                    <td>@product.Price</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+                
+            }   
+    </tbody>
+</table>
