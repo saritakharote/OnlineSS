@@ -56,7 +56,7 @@ namespace ShoppingStore.Services
         {
             using (var context = new SSContext())
             {
-                //product = context.Products.Find(ID);
+                    //product = context.Products.Find(ID);
                 //context.Entry(product).State = System.Data.Entity.EntityState.Deleted;
                 //OR
                 context.Products.Remove(product);
