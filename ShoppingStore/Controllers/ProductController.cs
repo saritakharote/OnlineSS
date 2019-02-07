@@ -39,5 +39,29 @@ namespace ShoppingStore.Controllers
             prodserv.SaveProduct(product);
             return RedirectToAction("ProductTable");
         }
+
+
+        //Edit
+        [HttpGet]
+        public ActionResult Edit(int ID)
+        {
+            var product = prodserv.GetProduct(ID);
+            return PartialView(product);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Product product)
+        {
+            prodserv.UpdateProduct(product);
+            return RedirectToAction("ProductTable");
+        }
+
+        //Delete
+        [HttpPost]
+        public ActionResult Delete(Product product)
+        {
+            prodserv.DeleteProduct(product);
+            return RedirectToAction("ProductTable");
+        }
     }
 }
